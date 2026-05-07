@@ -254,7 +254,8 @@ body {
   opacity: 0.85;
 }
 .info-card--why { border-left: 3px solid var(--accent); }
-.info-card--why p { font-size: 14px; }
+.info-card--why .info-card__label { color: var(--accent); }
+.info-card--why p { font-size: 15.5px; line-height: 1.6; }
 .info-card--languages .lang { display: grid; gap: 10px; }
 .info-card--languages .lang li {
   display: grid;

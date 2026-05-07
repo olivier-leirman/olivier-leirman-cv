@@ -660,7 +660,7 @@ body {
 }
 
 /* ---------------- PRINT ---------------- */
-@page { size: 1280px 1810px; margin: 0; }
+@page { size: 13.33in 19in; margin: 0; }
 @media print {
   .topbar, .toast, .copy__hint { display: none !important; }
   html, body { background: var(--bg); print-color-adjust: exact; -webkit-print-color-adjust: exact; }

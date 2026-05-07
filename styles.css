@@ -528,21 +528,23 @@ body {
    THEME 1 — HOUSE OF HR  (Nunito 900 · #1D153E · #EB005A · sharp corners)
    ===================================================================== */
 [data-style="hoh"] {
-  --bg: #f6f4ef;
+  --bg: #ffffff;
   --bg-2: #ffffff;
   --ink: #1d153e;
-  --ink-soft: #5a5670;
+  --ink-soft: #6b6680;
   --line: #1d153e;
-  --line-soft: rgba(29, 21, 62, 0.14);
+  --line-soft: #e6e4ec;
   --accent: #eb005a;
   --accent-ink: #ffffff;
   --card: #ffffff;
-  --shadow: 0 1px 0 rgba(29,21,62,0.06);
-  --radius: 0;
+  --shadow: none;
+  --radius: 4px;
   --font-sans: 'Nunito', system-ui, sans-serif;
   --font-display: 'Nunito', system-ui, sans-serif;
   --display-weight: 900;
   --display-tracking: -0.02em;
+  --hoh-pill: #ece4f6;
+  --hoh-pill-ink: #1d153e;
 }
 [data-style="hoh"][data-mode="dark"] {
   --bg: #14102b;
@@ -552,6 +554,98 @@ body {
   --line: #f6f4ef;
   --line-soft: rgba(255,255,255,0.12);
   --card: #1d153e;
+  --hoh-pill: rgba(255,255,255,0.08);
+  --hoh-pill-ink: #f6f4ef;
+}
+
+/* HoH-specific component refinements — match houseofhr.com card language */
+
+/* Section headings: ALL CAPS navy with pink underline accent */
+[data-style="hoh"] .section-h {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-weight: 800;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+
+/* Pills/tags — pale lilac with navy ALL CAPS text */
+[data-style="hoh"] .tags li,
+[data-style="hoh"] .tags--soft li {
+  background: var(--hoh-pill);
+  color: var(--hoh-pill-ink);
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Brand list — pale lilac pills, single line per item */
+[data-style="hoh"] .pitch__brands li {
+  background: var(--hoh-pill);
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+}
+[data-style="hoh"] .pitch__brands li span {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 800;
+  font-size: 12px;
+}
+[data-style="hoh"] .pitch__brands li[data-brand="hoh"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* Cards — white with thin grey border */
+[data-style="hoh"] .pitch,
+[data-style="hoh"] .bring__list li,
+[data-style="hoh"] .role {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  padding: clamp(20px, 2.5vw, 32px);
+}
+[data-style="hoh"] .role { border-top: 1px solid var(--line-soft); margin-bottom: 16px; }
+[data-style="hoh"] .role:last-child { border-bottom: 1px solid var(--line-soft); margin-bottom: 0; }
+[data-style="hoh"][data-mode="dark"] .pitch,
+[data-style="hoh"][data-mode="dark"] .bring__list li,
+[data-style="hoh"][data-mode="dark"] .role {
+  background: var(--bg-2);
+}
+
+/* Role titles — uppercase pink underline (HoH job-card vibe) */
+[data-style="hoh"] .role__title {
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  letter-spacing: 0.01em;
+}
+[data-style="hoh"] .role__client h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+/* Pitch label — pink uppercase */
+[data-style="hoh"] .pitch__label {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Topbar — clean white */
+[data-style="hoh"] .topbar {
+  background: var(--bg);
+  border-bottom: 1px solid var(--line-soft);
 }
 
 /* =====================================================================

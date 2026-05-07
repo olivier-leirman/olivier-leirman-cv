@@ -538,7 +538,7 @@ body {
   --accent-ink: #ffffff;
   --card: #ffffff;
   --shadow: none;
-  --radius: 4px;
+  --radius: 0;
   --font-sans: 'Nunito', system-ui, sans-serif;
   --font-display: 'Nunito', system-ui, sans-serif;
   --display-weight: 900;

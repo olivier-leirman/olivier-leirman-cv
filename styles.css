@@ -57,12 +57,39 @@ body {
 
 /* ---------------- TOPBAR ---------------- */
 .topbar {
-  display: flex; align-items: center; justify-content: flex-end; gap: 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
   padding: 18px var(--gutter);
   border-bottom: 1px solid var(--line-soft);
   background: var(--bg);
   position: sticky; top: 0; z-index: 50;
   backdrop-filter: saturate(140%) blur(8px);
+}
+
+/* ---------------- SEGMENTED CONTROL ---------------- */
+.seg-control {
+  display: inline-flex;
+  background: var(--bg-2);
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+}
+.seg-control button {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  background: transparent;
+  transition: background 180ms, color 180ms;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+.seg-control button:hover { color: var(--ink); }
+.seg-control button[aria-selected="true"] {
+  background: var(--ink);
+  color: var(--bg);
 }
 .topbar__intro {
   display: flex; align-items: center; gap: 10px;
@@ -655,7 +682,20 @@ body {
   .info-card--stack,
   .info-card--languages { grid-row: auto; grid-column: auto; }
   .pitch__links { grid-template-columns: 1fr; }
-  .topbar { padding: 12px 20px; }
+  .topbar { padding: 12px 20px; flex-wrap: wrap; }
+
+  /* Fylla: collapse label-left grids on small screens */
+  [data-style="fylla"] .info-card,
+  [data-style="fylla"] .bring,
+  [data-style="fylla"] .work,
+  [data-style="fylla"] .grid2 { grid-template-columns: 1fr; }
+  [data-style="fylla"] .bring__list { grid-template-columns: 1fr; }
+  [data-style="fylla"] .bring__list li { padding: 18px 0; border-bottom: 1px solid var(--line-soft); }
+  [data-style="fylla"] .bring__list li:last-child { border-bottom: none; }
+  [data-style="fylla"] .bring__list li::after { display: none; }
+  [data-style="fylla"] .grid2::before { display: none; }
+  [data-style="fylla"] .bring > .section-h,
+  [data-style="fylla"] .work > .section-h { position: static; margin-bottom: 16px; }
 }
 
 /* ---------------- PRINT ---------------- */
@@ -798,6 +838,217 @@ body {
   background: var(--bg);
   border-bottom: 1px solid var(--line-soft);
 }
+
+/* =====================================================================
+   THEME — FYLLA (Modern editorial agency · cream + grotesque + thin lines)
+   ===================================================================== */
+[data-style="fylla"] {
+  --bg: #f4efe6;
+  --bg-2: #fbf8f1;
+  --ink: #1a1a1a;
+  --ink-soft: #6b6b6b;
+  --line: #1a1a1a;
+  --line-soft: rgba(26,26,26,0.18);
+  --accent: #1a1a1a;
+  --accent-ink: #f4efe6;
+  --card: #fbf8f1;
+  --shadow: none;
+  --radius: 0;
+  --radius-pill: 999px;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Inter', system-ui, sans-serif;
+  --display-weight: 800;
+  --display-tracking: -0.04em;
+  --body-leading: 1.55;
+}
+[data-style="fylla"][data-mode="dark"] {
+  --bg: #1a1614;
+  --bg-2: #24201d;
+  --ink: #f4efe6;
+  --ink-soft: #b8aa9c;
+  --line: #f4efe6;
+  --line-soft: rgba(244,239,230,0.18);
+  --accent: #f4efe6;
+  --accent-ink: #1a1614;
+  --card: #24201d;
+}
+
+/* Hero — sharp corners, big tight grotesque */
+[data-style="fylla"] .hero { border-bottom: 1px solid var(--line-soft); }
+[data-style="fylla"] .hero__photo { border-radius: 0; }
+[data-style="fylla"] .hero__photo-clip { border-radius: 0; }
+[data-style="fylla"] .hero__name {
+  font-weight: 800;
+  font-size: clamp(48px, 7vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+[data-style="fylla"] .hero__role {
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+[data-style="fylla"] .hero__lede { font-size: 14.5px; line-height: 1.55; max-width: 56ch; }
+
+/* Info strip — Fylla "label left, content right" rows with thin dividers */
+[data-style="fylla"] .info-strip {
+  display: block;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  margin-bottom: 0;
+}
+[data-style="fylla"] .info-card {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: clamp(16px, 3vw, 32px);
+  padding: clamp(20px, 2.5vw, 28px) 0;
+  border: none;
+  border-bottom: 1px solid var(--line-soft);
+  border-radius: 0;
+  background: transparent;
+  align-items: start;
+}
+[data-style="fylla"] .info-card:last-child { border-bottom: none; }
+[data-style="fylla"] .info-card--why { border-left: none; }
+[data-style="fylla"] .info-card--why .info-card__label { color: var(--ink-soft); }
+[data-style="fylla"] .info-card--why p { font-size: 14px; line-height: 1.55; }
+[data-style="fylla"] .info-card__label {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+/* Sections: label-left, content-right via grid */
+[data-style="fylla"] .bring,
+[data-style="fylla"] .work,
+[data-style="fylla"] .grid2 {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0 clamp(16px, 3vw, 32px);
+  padding-top: clamp(40px, 5vw, 56px);
+  border-top: 1px solid var(--line-soft);
+  margin-bottom: 0;
+}
+[data-style="fylla"] .bring > .section-h,
+[data-style="fylla"] .work > .section-h {
+  grid-column: 1; grid-row: 1;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin: 0;
+  align-self: start;
+  position: sticky; top: 90px;
+}
+[data-style="fylla"] .bring > .bring__list { grid-column: 2; }
+[data-style="fylla"] .work > .role { grid-column: 2; }
+
+/* What I bring — 2x2 with thin separator lines */
+[data-style="fylla"] .bring__list {
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: none;
+}
+[data-style="fylla"] .bring__list li {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 22px 28px;
+  position: relative;
+}
+[data-style="fylla"] .bring__list li:nth-child(odd) { padding-left: 0; }
+[data-style="fylla"] .bring__list li:nth-child(odd)::after {
+  content: ""; position: absolute; right: 0; top: 22px; bottom: 22px;
+  width: 1px; background: var(--line-soft);
+}
+[data-style="fylla"] .bring__list li:nth-child(even) { padding-right: 0; }
+[data-style="fylla"] .bring__list li:nth-child(n+3) {
+  border-top: 1px solid var(--line-soft);
+}
+[data-style="fylla"] .bring__num {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+[data-style="fylla"] .bring__list h3 {
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* Roles — flat with thin top separators, no card chrome */
+[data-style="fylla"] .role {
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--line-soft);
+  border-radius: 0;
+  padding: 24px 0;
+  margin: 0;
+}
+[data-style="fylla"] .role:first-of-type { border-top: none; padding-top: 0; }
+[data-style="fylla"] .role:last-child { border-bottom: none; }
+[data-style="fylla"] .role__title {
+  font-weight: 700;
+  font-size: 19px;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+[data-style="fylla"] .role__org { color: var(--ink-soft); }
+[data-style="fylla"] .role__bullets li::before { background: var(--ink); }
+
+/* Grid2 (Education + Top certs) — also label-left */
+[data-style="fylla"] .grid2 > .grid2__col:first-child { grid-column: 2; grid-row: 1; }
+[data-style="fylla"] .grid2 > .grid2__col:nth-child(2) { grid-column: 2; grid-row: 2; padding-top: 24px; border-top: 1px solid var(--line-soft); }
+[data-style="fylla"] .grid2::before {
+  content: "Credentials";
+  grid-column: 1; grid-row: 1 / span 2;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+  position: sticky; top: 90px; align-self: start;
+}
+[data-style="fylla"] .grid2 .section-h {
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+
+/* Tags / pills — minimal flat style */
+[data-style="fylla"] .tags li {
+  background: transparent;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
+[data-style="fylla"] .tags--stack li.is-primary {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+/* Section spacing rhythm */
+[data-style="fylla"] main.stage > section { margin-bottom: 0; }
+[data-style="fylla"] .info-strip { margin-bottom: 0; }
+
+/* Topbar */
+[data-style="fylla"] .topbar { background: var(--bg); border-bottom-color: var(--line-soft); }
+[data-style="fylla"] .btn-ghost { border-radius: 999px; border-color: var(--ink); }
+
+/* Hero meta icons stay accent-pink-ish? Use ink in Fylla for monochrome */
+[data-style="fylla"] .hero__meta-icon { color: var(--ink); }
 
 /* =====================================================================
    THEME 2 — EDITORIAL  (Bookish · Pentagram / Penguin)

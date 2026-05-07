@@ -5,9 +5,11 @@
 (() => {
   const html = document.documentElement;
 
-  // ---------- Persisted mode ----------
+  // ---------- Persisted state ----------
   const savedMode = localStorage.getItem('cv:mode') || 'light';
+  const savedStyle = localStorage.getItem('cv:style') || 'hoh';
   setMode(savedMode);
+  setStyle(savedStyle);
 
   // ---------- Mode toggle ----------
   document.querySelectorAll('[data-action="toggle-mode"]').forEach((btn) => {
@@ -20,6 +22,19 @@
   function setMode(mode) {
     html.dataset.mode = mode;
     localStorage.setItem('cv:mode', mode);
+  }
+
+  // ---------- Style switcher ----------
+  document.querySelectorAll('[data-set-style]').forEach((btn) => {
+    btn.addEventListener('click', () => setStyle(btn.dataset.setStyle));
+  });
+
+  function setStyle(name) {
+    html.dataset.style = name;
+    localStorage.setItem('cv:style', name);
+    document.querySelectorAll('[data-set-style]').forEach((b) => {
+      b.setAttribute('aria-selected', b.dataset.setStyle === name ? 'true' : 'false');
+    });
   }
 
   // ---------- Download PDF (print this page; pick "Save as PDF" in dialog) ----------

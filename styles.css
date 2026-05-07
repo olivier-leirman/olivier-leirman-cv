@@ -489,6 +489,7 @@ body {
   max-width: 70ch;
   text-wrap: pretty;
 }
+.role > .role__intro { margin-bottom: 10px; }
 .role__client { margin-top: 18px; }
 .role__client h4 {
   margin: 0 0 6px;

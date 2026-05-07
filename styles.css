@@ -213,82 +213,142 @@ body {
   color: var(--ink);
 }
 
-/* ---------------- PITCH (Why House of HR) ---------------- */
+/* ---------------- WHY HOUSE OF HR ---------------- */
+.why { margin-bottom: clamp(40px, 5vw, 64px); }
+.why p {
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 70ch;
+}
+.why p strong { color: var(--ink); font-weight: 800; }
+.why .section-h { margin-bottom: 18px; }
+
+/* ---------------- PITCH (PS / whitelabel block) ---------------- */
 .pitch {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: clamp(20px, 3vw, 40px);
   padding: clamp(28px, 4vw, 44px);
   background: var(--card);
   border: 1px solid var(--line-soft);
-  border-left: 4px solid var(--accent);
   border-radius: var(--radius);
   margin-bottom: clamp(48px, 6vw, 80px);
   box-shadow: var(--shadow);
 }
-.pitch__label {
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 800;
-  align-self: start;
-  padding-top: 6px;
-}
-.pitch__lead {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(20px, 2.4vw, 26px);
-  line-height: 1.25;
-  margin: 0 0 16px;
-  text-wrap: pretty;
-  color: var(--ink);
-}
-.pitch__body p { margin: 0 0 14px; color: var(--ink-soft); font-size: 15px; line-height: 1.6; }
-.pitch__body p:last-child { margin-bottom: 0; }
+.pitch__body > p { margin: 0 0 14px; color: var(--ink-soft); font-size: 14.5px; line-height: 1.65; }
 .pitch__ps {
-  display: flex; gap: 10px; align-items: baseline;
-  padding-top: 14px; border-top: 1px dashed var(--line-soft);
-  margin-top: 18px;
+  display: inline-flex; gap: 10px; align-items: baseline;
+  padding: 8px 14px;
+  background: var(--accent); color: var(--accent-ink);
+  font-weight: 800;
+  margin: 0 0 16px;
+  border-radius: var(--radius);
 }
 .pitch__ps-tag {
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 800;
-  padding: 3px 7px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  border-radius: 3px;
   flex: none;
+}
+.pitch__ps-em {
+  font-style: normal;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .pitch__brands {
   display: flex; flex-wrap: wrap; gap: 8px;
-  margin-top: 18px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
 }
 .pitch__brands li {
-  display: inline-flex; flex-direction: column;
-  padding: 8px 12px;
+  padding: 8px 14px;
   border: 1px solid var(--line-soft);
   background: var(--bg);
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   border-radius: var(--radius);
 }
 .pitch__brands li[data-brand="hoh"] {
   background: var(--accent); color: var(--accent-ink); border-color: var(--accent);
 }
-.pitch__brands li span { font-weight: 700; }
-.pitch__brands li em {
-  font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
-  font-style: normal; opacity: 0.7;
+.pitch__links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 0;
+  padding: 18px 0 0;
+  list-style: none;
+  border-top: 1px solid var(--line-soft);
+}
+.pitch__links a {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+.pitch__links a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------------- ROLE BULLETS ---------------- */
+.role__bullets {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.role__bullets li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.role__bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 8px;
+  width: 10px; height: 10px;
+  background: var(--accent);
+}
+.role__bullets li strong { color: var(--ink); font-weight: 800; }
+
+/* ---------------- BLOCK NOTE ---------------- */
+.block__note {
+  margin: 14px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+
+/* ---------------- TAGS --- STACK variant ---------------- */
+.tags--stack { gap: 10px; }
+.tags--stack li {
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--ink);
+}
+.tags--stack li.is-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
 }
 
 /* ---------------- WHAT I BRING ---------------- */
 .bring { margin-bottom: clamp(48px, 6vw, 80px); }
 .bring__list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(20px, 2.5vw, 32px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(20px, 2.5vw, 24px);
 }
 .bring__list li {
   padding: clamp(22px, 2.5vw, 28px);
@@ -503,12 +563,16 @@ body {
 .toast.is-on { opacity: 1; transform: translate(-50%, 0); }
 
 /* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 1080px) {
+  .bring__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; }
   .hero__photo { width: 120px; height: 120px; }
   .pitch { grid-template-columns: 1fr; }
   .bring__list { grid-template-columns: 1fr; }
   .grid2 { grid-template-columns: 1fr; }
+  .pitch__links { grid-template-columns: 1fr; }
   .topbar__intro { font-size: 12px; flex-basis: 100%; }
   .topbar { padding: 12px 20px; flex-wrap: wrap; gap: 12px; }
   .switcher { order: 1; flex: 1; justify-content: center; }
@@ -581,26 +645,7 @@ body {
   letter-spacing: 0.04em;
 }
 
-/* Brand list — pale lilac pills, single line per item */
-[data-style="hoh"] .pitch__brands li {
-  background: var(--hoh-pill);
-  border: none;
-  border-radius: 999px;
-  padding: 8px 16px;
-}
-[data-style="hoh"] .pitch__brands li span {
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-weight: 800;
-  font-size: 12px;
-}
-[data-style="hoh"] .pitch__brands li[data-brand="hoh"] {
-  background: var(--accent);
-  color: var(--accent-ink);
-}
-
 /* Cards — white with thin grey border */
-[data-style="hoh"] .pitch,
 [data-style="hoh"] .bring__list li,
 [data-style="hoh"] .role {
   background: var(--card);
@@ -610,7 +655,6 @@ body {
 }
 [data-style="hoh"] .role { border-top: 1px solid var(--line-soft); margin-bottom: 16px; }
 [data-style="hoh"] .role:last-child { border-bottom: 1px solid var(--line-soft); margin-bottom: 0; }
-[data-style="hoh"][data-mode="dark"] .pitch,
 [data-style="hoh"][data-mode="dark"] .bring__list li,
 [data-style="hoh"][data-mode="dark"] .role {
   background: var(--bg-2);
@@ -622,19 +666,52 @@ body {
   letter-spacing: 0.01em;
   font-weight: 900;
 }
-[data-style="hoh"] .role__client h4 {
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+
+/* Pitch / PS block — dark navy panel with pink & white (matches HoH PDF footer) */
+[data-style="hoh"] .pitch {
+  background: var(--ink);
+  color: #ffffff;
+  border: none;
+  padding: clamp(28px, 4vw, 44px);
+}
+[data-style="hoh"] .pitch__body > p { color: rgba(255,255,255,0.86); }
+[data-style="hoh"] .pitch__ps {
+  background: transparent;
+  color: #ffffff;
+  padding: 0 0 14px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  border-radius: 0;
+}
+[data-style="hoh"] .pitch__ps-tag {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #ffffff;
+}
+[data-style="hoh"] .pitch__ps-em {
   color: var(--accent);
+  text-decoration: none;
   font-weight: 800;
 }
-
-/* Pitch label — pink uppercase */
-[data-style="hoh"] .pitch__label {
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+[data-style="hoh"] .pitch__brands li {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #ffffff;
+  border-radius: var(--radius);
+  padding: 10px 16px;
 }
+[data-style="hoh"] .pitch__brands li[data-brand="hoh"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+[data-style="hoh"] .pitch__links {
+  border-top-color: rgba(255,255,255,0.18);
+}
+[data-style="hoh"] .pitch__links a { color: var(--accent); }
 
 /* Topbar — clean white */
 [data-style="hoh"] .topbar {

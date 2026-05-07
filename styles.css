@@ -560,14 +560,11 @@ body {
 
 /* HoH-specific component refinements — match houseofhr.com card language */
 
-/* Section headings: ALL CAPS navy with pink underline accent */
+/* Section headings: ALL CAPS navy, no underline (HoH reserves underline for links) */
 [data-style="hoh"] .section-h {
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  font-weight: 800;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--accent);
-  display: inline-block;
+  font-weight: 900;
 }
 
 /* Pills/tags — pale lilac with navy ALL CAPS text */
@@ -619,14 +616,11 @@ body {
   background: var(--bg-2);
 }
 
-/* Role titles — uppercase pink underline (HoH job-card vibe) */
+/* Role titles — uppercase navy (no underline; HoH reserves underline for links) */
 [data-style="hoh"] .role__title {
   text-transform: uppercase;
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-  text-underline-offset: 4px;
-  text-decoration-thickness: 2px;
   letter-spacing: 0.01em;
+  font-weight: 900;
 }
 [data-style="hoh"] .role__client h4 {
   text-transform: uppercase;

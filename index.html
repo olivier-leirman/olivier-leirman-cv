@@ -24,6 +24,15 @@
         flick the switcher to see why I'm the whitelabel hire.
       </span>
     </div>
+    <nav class="switcher" aria-label="Visual style switcher">
+      <ul class="switcher__list" role="tablist">
+        <li><button role="tab" data-set-style="hoh" data-active>House of HR</button></li>
+        <li><button role="tab" data-set-style="editorial">Editorial</button></li>
+        <li><button role="tab" data-set-style="brutal">Brutalism</button></li>
+        <li><button role="tab" data-set-style="glass">Glass</button></li>
+        <li><button role="tab" data-set-style="flat">Flat</button></li>
+      </ul>
+    </nav>
     <div class="topbar__actions">
       <button type="button" class="btn-ghost" data-action="toggle-mode" aria-label="Toggle dark mode">
         <span class="btn-ghost__icon" data-icon="sun">☀</span>
@@ -35,10 +44,6 @@
         <span class="btn-ghost__icon">↓</span>
         <span>Download PDF</span>
       </a>
-      <button type="button" class="btn-ghost" data-action="print">
-        <span class="btn-ghost__icon">⎙</span>
-        <span>Print</span>
-      </button>
     </div>
   </header>
 
@@ -333,18 +338,6 @@
       <p class="end__small">Rendered live in five visual systems · Same content · Same semantics · Different skins.</p>
     </footer>
   </main>
-
-  <!-- ======== STYLE SWITCHER (floating pill) ======== -->
-  <nav class="switcher" aria-label="Visual style switcher">
-    <span class="switcher__label">Style</span>
-    <ul class="switcher__list" role="tablist">
-      <li><button role="tab" data-set-style="hoh" data-active>House of HR</button></li>
-      <li><button role="tab" data-set-style="editorial">Editorial</button></li>
-      <li><button role="tab" data-set-style="brutal">Brutalism</button></li>
-      <li><button role="tab" data-set-style="glass">Glass</button></li>
-      <li><button role="tab" data-set-style="flat">Flat</button></li>
-    </ul>
-  </nav>
 
   <!-- Toast for copy feedback -->
   <div class="toast" role="status" aria-live="polite"></div>

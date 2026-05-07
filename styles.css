@@ -460,31 +460,20 @@ body {
 .end__sig { font-family: var(--font-display); font-weight: 800; font-size: 20px; margin: 0 0 6px; }
 .end__small { margin: 0; font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.04em; }
 
-/* ---------------- STYLE SWITCHER (floating pill) ---------------- */
+/* ---------------- STYLE SWITCHER (inline in topbar) ---------------- */
 .switcher {
-  position: fixed;
-  bottom: 24px; left: 50%; transform: translateX(-50%);
   display: flex; align-items: center; gap: 10px;
-  padding: 8px 8px 8px 18px;
+  padding: 4px;
   background: var(--card);
   color: var(--ink);
   border: 1px solid var(--line-soft);
   border-radius: 999px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.06);
-  z-index: 100;
-  backdrop-filter: blur(14px) saturate(160%);
-}
-.switcher__label {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 800;
-  color: var(--ink-soft);
+  flex: none;
 }
 .switcher__list { display: flex; gap: 4px; }
 .switcher__list button {
-  padding: 8px 14px;
-  font-size: 13px;
+  padding: 6px 12px;
+  font-size: 12px;
   font-weight: 700;
   border-radius: 999px;
   color: var(--ink-soft);
@@ -520,11 +509,11 @@ body {
   .pitch { grid-template-columns: 1fr; }
   .bring__list { grid-template-columns: 1fr; }
   .grid2 { grid-template-columns: 1fr; }
-  .topbar__intro { font-size: 12px; }
-  .topbar { padding: 12px 20px; flex-wrap: wrap; }
-  .switcher { width: calc(100% - 24px); justify-content: center; padding: 6px; }
-  .switcher__label { display: none; }
-  .switcher__list button { padding: 8px 10px; font-size: 12px; }
+  .topbar__intro { font-size: 12px; flex-basis: 100%; }
+  .topbar { padding: 12px 20px; flex-wrap: wrap; gap: 12px; }
+  .switcher { order: 1; flex: 1; justify-content: center; }
+  .topbar__actions { order: 2; }
+  .switcher__list button { padding: 6px 10px; font-size: 11px; }
 }
 
 /* ---------------- PRINT ---------------- */
@@ -857,13 +846,10 @@ body {
 [data-style="brutal"] .links a { font-family: var(--font-mono); }
 
 [data-style="brutal"] .switcher {
-  border: 3px solid var(--line);
+  border: 2px solid var(--line);
   border-radius: 0;
   background: var(--bg-2);
-  box-shadow: 4px 4px 0 var(--accent);
-  backdrop-filter: none;
 }
-[data-style="brutal"] .switcher__label { font-family: var(--font-mono); }
 [data-style="brutal"] .switcher__list button {
   border-radius: 0;
   text-transform: uppercase;
@@ -1005,9 +991,8 @@ body {
 [data-style="glass"] .switcher {
   background: rgba(255,255,255,0.55);
   border: 1px solid rgba(255,255,255,0.7);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  box-shadow: 0 20px 50px rgba(91,108,255,0.18);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 [data-style="glass"][data-mode="dark"] .switcher {
   background: rgba(20,24,50,0.45);

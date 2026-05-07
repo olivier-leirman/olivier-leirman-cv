@@ -1,5 +1,5 @@
 // =====================================================================
-// CV — Style switcher, mode toggle, copy-to-clipboard, print
+// CV — Style switcher, mode toggle, copy-to-clipboard
 // =====================================================================
 
 (() => {
@@ -57,11 +57,6 @@
     html.dataset.mode = mode;
     localStorage.setItem('cv:mode', mode);
   }
-
-  // ---------- Print ----------
-  document.querySelectorAll('[data-action="print"]').forEach((btn) => {
-    btn.addEventListener('click', () => window.print());
-  });
 
   // ---------- Copy to clipboard ----------
   const toast = document.querySelector('.toast');

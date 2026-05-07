@@ -192,7 +192,8 @@ body {
   gap: 8px;
   padding: 0;
   color: var(--ink);
-  font-weight: 600;
+  font-weight: inherit;
+  font-size: inherit;
 }
 .copy__hint {
   font-size: 10px;

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-style="hoh" data-mode="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Olivier Leirman — Senior UX/UI Product Designer</title>
+  <meta name="description" content="One designer. Many brands. Shipped product. CV for Olivier Leirman, rendered as a live whitelabel exercise." />
+
+  <!-- Fonts: load all five style families upfront so switching is instant -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ======== TOP BAR (recruiter intro + actions) ======== -->
+  <header class="topbar">
+    <div class="topbar__intro">
+      <span class="topbar__dot" aria-hidden="true"></span>
+      <span class="topbar__text">
+        <strong>Hey recruiter.</strong> Same CV, five visual systems —
+        flick the switcher to see why I'm the whitelabel hire.
+      </span>
+    </div>
+    <div class="topbar__actions">
+      <button type="button" class="btn-ghost" data-action="toggle-mode" aria-label="Toggle dark mode">
+        <span class="btn-ghost__icon" data-icon="sun">☀</span>
+        <span class="btn-ghost__icon" data-icon="moon">☾</span>
+        <span class="btn-ghost__label" data-label="light">Light</span>
+        <span class="btn-ghost__label" data-label="dark">Dark</span>
+      </button>
+      <a class="btn-ghost" href="assets/Olivier-Leirman-CV.pdf" download>
+        <span class="btn-ghost__icon">↓</span>
+        <span>Download PDF</span>
+      </a>
+      <button type="button" class="btn-ghost" data-action="print">
+        <span class="btn-ghost__icon">⎙</span>
+        <span>Print</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======== STAGE: the CV itself ======== -->
+  <main class="stage">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__photo">
+        <img src="assets/olivier.png" alt="Portrait of Olivier Leirman" />
+      </div>
+      <div class="hero__content">
+        <p class="hero__role">Senior UX/UI Product Designer · Freelance</p>
+        <h1 class="hero__name">Olivier Leirman</h1>
+        <p class="hero__tagline">One designer. Many brands. Shipped product.</p>
+        <p class="hero__lede">
+          Sole designer across a multi-brand e-commerce design system, two healthcare
+          SaaS products, and an industrial HMI. Behavioral design and mobile UX baked
+          in from a previous life as gamification consultant. Comfortable being the
+          only designer in the room — and pushing back on the roadmap.
+        </p>
+        <ul class="hero__meta">
+          <li>
+            <span class="hero__meta-label">Phone</span>
+            <button class="copy" type="button" data-copy="+32 476 84 79 67">
+              <span>+32 476 84 79 67</span>
+              <span class="copy__hint">copy</span>
+            </button>
+          </li>
+          <li>
+            <span class="hero__meta-label">Email</span>
+            <button class="copy" type="button" data-copy="leirman.olivier@gmail.com">
+              <span>leirman.olivier@gmail.com</span>
+              <span class="copy__hint">copy</span>
+            </button>
+          </li>
+          <li>
+            <span class="hero__meta-label">Base</span>
+            <span>Kortrijk, BE</span>
+          </li>
+          <li>
+            <span class="hero__meta-label">Rate</span>
+            <span>€650 / day · 1–3 days/week</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- WHY HOUSE OF HR — pinned because it's the pitch -->
+    <section class="pitch">
+      <div class="pitch__label">Why House of HR</div>
+      <div class="pitch__body">
+        <p class="pitch__lead">
+          A whitelabel candidate app deployed across multiple HR brands is the
+          <em>exact</em> problem space I work in daily — one product, many
+          brands, real consequences when the system breaks.
+        </p>
+        <p>
+          Add a sole-designer setup, mobile-first scope, and a hybrid Kortrijk
+          team: it's the role I'd build for myself if I could.
+        </p>
+        <p class="pitch__ps">
+          <span class="pitch__ps-tag">PS</span>
+          This CV is itself a whitelabel exercise — same content, deployed in
+          <strong>five</strong> visual systems. Use the switcher.
+        </p>
+        <ul class="pitch__brands">
+          <li data-brand="hoh"><span>House of HR</span><em>this version</em></li>
+          <li data-brand="baldwin"><span>Baldwin × Hyva</span><em>e-commerce DS</em></li>
+          <li data-brand="lochting"><span>Lochting / Meditech</span><em>pharmacy + kiosk</em></li>
+          <li data-brand="medipim"><span>Medipim</span><em>SNOMED PIM SaaS</em></li>
+          <li data-brand="fraank"><span>Fraank</span><em>data-viz</em></li>
+          <li data-brand="magical"><span>Magical Smiley</span><em>own practice</em></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- WHAT I BRING -->
+    <section class="bring">
+      <h2 class="section-h">What I bring to your whitelabel app</h2>
+      <ol class="bring__list">
+        <li>
+          <span class="bring__num">01</span>
+          <h3>Multi-brand design systems</h3>
+          <p>
+            Lead designer on the Baldwin × Hyva e-commerce DS — one Magento
+            codebase, multiple branded storefronts. Same logic on
+            Lochting / Meditech: shared system across pharmacy webshop and
+            in-store kiosks. Tokens, components, brand-flag adaptation are
+            daily work.
+          </p>
+        </li>
+        <li>
+          <span class="bring__num">02</span>
+          <h3>Mobile UX with behavioral depth</h3>
+          <p>
+            Patterns grounded in Mobbin and Baymard Institute research (paid
+            membership). Behavioral design from co-running Engaging Heroes —
+            Octalysis &amp; SIMPSIS frameworks — applied to onboarding,
+            retention and flow design without resorting to gamification
+            gimmicks.
+          </p>
+        </li>
+        <li>
+          <span class="bring__num">03</span>
+          <h3>Solo ownership, end-to-end</h3>
+          <p>
+            Sole designer at Baldwin (3 product lines) and Hyler. Discovery
+            interviews → problem framing → low-fi → production-ready Figma →
+            side-by-side handoff with developers. Used to owning <em>what</em>
+            and <em>why</em>, not just the pixel.
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- RECENT WORK -->
+    <section class="work">
+      <h2 class="section-h">Recent work</h2>
+
+      <article class="role">
+        <header class="role__head">
+          <h3 class="role__title">Senior Freelance UX/UI Product Designer</h3>
+          <span class="role__dates">Aug 2023 — Now</span>
+        </header>
+        <p class="role__org">Magical Smiley · Own Practice</p>
+
+        <div class="role__client">
+          <h4>Baldwin <span class="role__client-meta">2023 — Now · Lead Designer · 3 product lines</span></h4>
+          <p>
+            Baldwin × Hyva e-commerce DS — multi-brand Magento storefronts
+            (component library, tokens, brand-flag adaptation). Medipim —
+            SNOMED/AMT pharmacy PIM SaaS (3 organisation types, 8 user roles);
+            pattern analysis, MVP feedback &amp; analytics rollout (PostHog,
+            A/B, replay). Lochting / Meditech — "Shopify for pharmacists"
+            running on web shop + in-pharmacy Matic Pro / Slim kiosks. Same
+            DS, two contexts, very different ergonomics. Fraank — apotheek-
+            analytics platform; monochrome data-viz across gemeente / ATC /
+            stock pillars.
+          </p>
+        </div>
+
+        <div class="role__client">
+          <h4>Hyler <span class="role__client-meta">2025 — Now · Sole Designer</span></h4>
+          <p>
+            HMI redesign for agricultural machines (hemp &amp; flax processing).
+            Bottom-up layout reasoning, on-machine readability, glove-friendly
+            touch targets, status-first information architecture.
+          </p>
+        </div>
+      </article>
+
+      <article class="role">
+        <header class="role__head">
+          <h3 class="role__title">Co-Founder · Head of Product &amp; Design</h3>
+          <span class="role__dates">Oct 2020 — Jun 2023</span>
+        </header>
+        <p class="role__org">Fairytalewise</p>
+        <p>
+          Built an educational content brand from zero: research, branding, MLP
+          validation, mobile-first content, animation, merchandise, digital
+          marketing. Created character worlds (Wisdom of Everything, Psychology
+          of Everything, Jungle Realm, Realstickmen, Stress Champion) — reached
+          +10,000 individuals.
+        </p>
+      </article>
+
+      <article class="role">
+        <header class="role__head">
+          <h3 class="role__title">Co-Founder · Behavior &amp; Experience Design Consultant</h3>
+          <span class="role__dates">Jan 2018 — Jun 2020</span>
+        </header>
+        <p class="role__org">Engaging Heroes</p>
+        <p>
+          Gamification &amp; behavioral design consultancy. Advised Orange,
+          Verhelst, Cashplannr, UFL on attracting, engaging and retaining
+          customers &amp; employees. Taught +4,700 professionals worldwide
+          the SIMPSIS Motivation &amp; Human Drives framework on Udemy —
+          foundation for how I read motivation and friction in product flows
+          today.
+        </p>
+      </article>
+    </section>
+
+    <!-- TWO-COLUMN: Expertise/Tools/Languages + Education/Certs -->
+    <section class="grid2">
+
+      <div class="grid2__col">
+        <section class="block">
+          <h2 class="section-h">Expertise</h2>
+          <ul class="tags">
+            <li>Multi-brand DS</li>
+            <li>Mobile UX</li>
+            <li>Whitelabel platforms</li>
+            <li>E-commerce UX (Baymard)</li>
+            <li>Discovery &amp; research</li>
+            <li>Gamification (Octalysis)</li>
+            <li>Behavioral design</li>
+            <li>Design tokens</li>
+            <li>Accessibility (WCAG 2.1 AA)</li>
+            <li>HMI / kiosk UX</li>
+            <li>Data viz</li>
+            <li>HTML / CSS / JS</li>
+            <li>UX writing &amp; microcopy</li>
+            <li>Service design</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2 class="section-h">Tools</h2>
+          <ul class="tags tags--soft">
+            <li>Figma</li><li>FigJam</li><li>Miro</li><li>Whimsical</li>
+            <li>Illustrator</li><li>Photoshop</li><li>After Effects</li>
+            <li>Webflow</li><li>Framer</li><li>Notion</li><li>PostHog</li>
+            <li>GA4</li><li>UX Pilot</li><li>Cursor</li><li>Claude</li><li>ChatGPT</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2 class="section-h">Languages</h2>
+          <ul class="lang">
+            <li><span>Dutch</span><em>Native</em></li>
+            <li><span>English</span><em>Full professional</em></li>
+            <li><span>French</span><em>Limited working</em></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="grid2__col">
+        <section class="block">
+          <h2 class="section-h">Education</h2>
+          <ul class="timeline">
+            <li>
+              <div class="timeline__title">MSc Business Economics · Marketing &amp; HRM</div>
+              <div class="timeline__meta">KU Leuven · 2017 — 18</div>
+            </li>
+            <li>
+              <div class="timeline__title">MSc Business Economics · Entrepreneurship &amp; Int'l Strategy</div>
+              <div class="timeline__meta">KU Leuven · 2016 — 17</div>
+            </li>
+            <li>
+              <div class="timeline__title">Cert. La réalité de l'entreprise</div>
+              <div class="timeline__meta">IÉSEG Lille · 2014 — 15</div>
+            </li>
+            <li>
+              <div class="timeline__title">BSc Applied Economics · Innovation &amp; Entrepreneurship</div>
+              <div class="timeline__meta">KU Leuven Kulak · 2013 — 16</div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2 class="section-h">Top certifications</h2>
+          <ul class="timeline">
+            <li>
+              <div class="timeline__title">UXcel — Mobile Design · UI Components I &amp; II · UX Foundations · Accessibility · Service Design</div>
+              <div class="timeline__meta">2023 — 24</div>
+            </li>
+            <li>
+              <div class="timeline__title">Octalysis Framework — Yu-Kai Chou</div>
+              <div class="timeline__meta">2018</div>
+            </li>
+            <li>
+              <div class="timeline__title">Gamification — Wharton (Coursera)</div>
+              <div class="timeline__meta">2018</div>
+            </li>
+            <li>
+              <div class="timeline__title">Consumer Neuroscience — Copenhagen Business School</div>
+              <div class="timeline__meta">2019</div>
+            </li>
+            <li>
+              <div class="timeline__title">Applied Scrum for PM — Univ. of Maryland</div>
+              <div class="timeline__meta">2019</div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2 class="section-h">Find me</h2>
+          <ul class="links">
+            <li><a href="https://linkedin.com/in/olivier-leirman" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+            <li><a href="https://dribbble.com/olivierleirman" target="_blank" rel="noopener">Dribbble ↗</a></li>
+            <li><a href="https://behance.net/olivierleirman" target="_blank" rel="noopener">Behance ↗</a></li>
+            <li><a href="https://fairytalewise.com" target="_blank" rel="noopener">Fairytalewise ↗</a></li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <footer class="end">
+      <p class="end__sig">— Olivier</p>
+      <p class="end__small">Rendered live in five visual systems · Same content · Same semantics · Different skins.</p>
+    </footer>
+  </main>
+
+  <!-- ======== STYLE SWITCHER (floating pill) ======== -->
+  <nav class="switcher" aria-label="Visual style switcher">
+    <span class="switcher__label">Style</span>
+    <ul class="switcher__list" role="tablist">
+      <li><button role="tab" data-set-style="hoh" data-active>House of HR</button></li>
+      <li><button role="tab" data-set-style="editorial">Editorial</button></li>
+      <li><button role="tab" data-set-style="brutal">Brutalism</button></li>
+      <li><button role="tab" data-set-style="glass">Glass</button></li>
+      <li><button role="tab" data-set-style="flat">Flat</button></li>
+    </ul>
+  </nav>
+
+  <!-- Toast for copy feedback -->
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

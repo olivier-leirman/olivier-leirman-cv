@@ -1,62 +1,31 @@
 // =====================================================================
-// CV — Style switcher, mode toggle, copy-to-clipboard
+// CV — Mode toggle, copy-to-clipboard, download as PDF (print)
 // =====================================================================
 
 (() => {
   const html = document.documentElement;
 
-  // ---------- Persisted state ----------
-  const saved = {
-    style: localStorage.getItem('cv:style') || 'hoh',
-    mode: localStorage.getItem('cv:mode') || 'light',
-  };
-  setStyle(saved.style, false);
-  setMode(saved.mode, false);
-
-  // ---------- Style switcher ----------
-  document.querySelectorAll('[data-set-style]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      setStyle(btn.dataset.setStyle, true);
-    });
-  });
-
-  function setStyle(name, animate) {
-    if (animate) {
-      // crossfade: fade body briefly to 0, swap attribute, fade back
-      const stage = document.querySelector('.stage');
-      if (stage) {
-        stage.classList.add('is-swapping');
-        setTimeout(() => {
-          html.dataset.style = name;
-          requestAnimationFrame(() => {
-            stage.classList.remove('is-swapping');
-          });
-        }, 180);
-      } else {
-        html.dataset.style = name;
-      }
-    } else {
-      html.dataset.style = name;
-    }
-    localStorage.setItem('cv:style', name);
-    document.querySelectorAll('[data-set-style]').forEach((b) => {
-      if (b.dataset.setStyle === name) b.setAttribute('data-active', '');
-      else b.removeAttribute('data-active');
-    });
-  }
+  // ---------- Persisted mode ----------
+  const savedMode = localStorage.getItem('cv:mode') || 'light';
+  setMode(savedMode);
 
   // ---------- Mode toggle ----------
   document.querySelectorAll('[data-action="toggle-mode"]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const next = html.dataset.mode === 'dark' ? 'light' : 'dark';
-      setMode(next, true);
+      setMode(next);
     });
   });
 
-  function setMode(mode, animate) {
+  function setMode(mode) {
     html.dataset.mode = mode;
     localStorage.setItem('cv:mode', mode);
   }
+
+  // ---------- Download PDF (print this page; pick "Save as PDF" in dialog) ----------
+  document.querySelectorAll('[data-action="download-pdf"]').forEach((btn) => {
+    btn.addEventListener('click', () => window.print());
+  });
 
   // ---------- Copy to clipboard ----------
   const toast = document.querySelector('.toast');
@@ -83,14 +52,12 @@
     });
   });
 
-  // ---------- Keyboard shortcuts: 1-5 cycle styles, m toggles mode ----------
+  // ---------- Keyboard shortcut: m toggles mode ----------
   document.addEventListener('keydown', (e) => {
     if (e.target.matches('input,textarea,button')) return;
-    const map = { '1': 'hoh', '2': 'editorial', '3': 'brutal', '4': 'glass', '5': 'flat' };
-    if (map[e.key]) setStyle(map[e.key], true);
     if (e.key.toLowerCase() === 'm') {
       const next = html.dataset.mode === 'dark' ? 'light' : 'dark';
-      setMode(next, true);
+      setMode(next);
     }
   });
 })();

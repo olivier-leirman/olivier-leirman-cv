@@ -15,24 +15,8 @@
 </head>
 <body>
 
-  <!-- ======== TOP BAR (recruiter intro + actions) ======== -->
+  <!-- ======== TOP BAR ======== -->
   <header class="topbar">
-    <div class="topbar__intro">
-      <span class="topbar__dot" aria-hidden="true"></span>
-      <span class="topbar__text">
-        <strong>Hey recruiter.</strong> Same CV, five visual systems —
-        flick the switcher to see why I'm the whitelabel hire.
-      </span>
-    </div>
-    <nav class="switcher" aria-label="Visual style switcher">
-      <ul class="switcher__list" role="tablist">
-        <li><button role="tab" data-set-style="hoh" data-active>House of HR</button></li>
-        <li><button role="tab" data-set-style="editorial">Editorial</button></li>
-        <li><button role="tab" data-set-style="brutal">Brutalism</button></li>
-        <li><button role="tab" data-set-style="glass">Glass</button></li>
-        <li><button role="tab" data-set-style="flat">Flat</button></li>
-      </ul>
-    </nav>
     <div class="topbar__actions">
       <button type="button" class="btn-ghost" data-action="toggle-mode" aria-label="Toggle dark mode">
         <span class="btn-ghost__icon" data-icon="sun">☀</span>
@@ -40,10 +24,10 @@
         <span class="btn-ghost__label" data-label="light">Light</span>
         <span class="btn-ghost__label" data-label="dark">Dark</span>
       </button>
-      <a class="btn-ghost" href="assets/Olivier-Leirman-CV.pdf" download>
+      <button type="button" class="btn-ghost" data-action="download-pdf">
         <span class="btn-ghost__icon">↓</span>
         <span>Download PDF</span>
-      </a>
+      </button>
     </div>
   </header>
 
@@ -105,6 +89,7 @@
         <ul class="tags tags--stack">
           <li class="is-primary">Figma</li>
           <li class="is-primary">Claude</li>
+          <li>Genspark</li>
           <li>Mobbin</li>
           <li>Vercel + GitHub</li>
         </ul>

@@ -660,13 +660,23 @@ body {
 }
 
 /* ---------------- PRINT ---------------- */
+@page { size: 1280px 1810px; margin: 0; }
 @media print {
   .topbar, .toast, .copy__hint { display: none !important; }
   html, body { background: var(--bg); print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-  .stage { padding: 24px var(--gutter) 24px; }
+  .stage { padding: 56px 64px 64px; max-width: none; }
   .info-card, .bring__list li, .role { break-inside: avoid; }
   .hero, .info-strip, .bring, .work, .grid2 { page-break-inside: avoid; }
   .hero__sticker { display: none; }
+
+  /* Force desktop layout regardless of paper width */
+  .hero { grid-template-columns: 180px 1fr !important; }
+  .info-strip { grid-template-columns: 1.5fr 1fr !important; grid-template-rows: auto auto !important; }
+  .info-card--why { grid-row: 1 / span 2 !important; grid-column: 1 !important; }
+  .info-card--stack { grid-column: 2 !important; grid-row: 1 !important; }
+  .info-card--languages { grid-column: 2 !important; grid-row: 2 !important; }
+  .bring__list { grid-template-columns: repeat(4, minmax(0,1fr)) !important; }
+  .grid2 { grid-template-columns: 1fr 1fr !important; }
 }
 
 /* =====================================================================
